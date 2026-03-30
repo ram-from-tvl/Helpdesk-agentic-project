@@ -23,14 +23,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Generate demo fixtures
-        run: python demo_projects/langgraph_groq_helpdesk/scripts/generate_gozen_fixtures.py
+      - name: Generate quality fixtures
+        run: python apps/helpdesk_ops_assistant/scripts/generate_gozen_fixtures.py
 
-      - name: L1 Component Checks
-        run: python gozen_cli.py --level 1 --test-file test_cases/demo_langgraph_level1_components.json --module demo_projects.langgraph_groq_helpdesk.app.components
+      - name: Run PR Quality Gate (L1-L3)
+        run: python scripts/run_pr_quality_gate.py
 
-      - name: L2 Trajectory Checks
-        run: python gozen_cli.py --level 2 --test-file test_cases/demo_langgraph_level2_trajectories.json
+      - name: Build Dashboard Snapshot
+        run: python operations/dashboard/build_dashboard.py
 
-      - name: L3 Outcome Checks
-        run: python gozen_cli.py --level 3 --test-file test_cases/demo_langgraph_level3_outcomes.json
+      - name: Upload PR Dashboard Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gozen-pr-dashboard
+          path: |
+            artifacts/pr_quality_report.json
+            artifacts/dashboard.html
