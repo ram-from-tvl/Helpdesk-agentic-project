@@ -1,0 +1,38 @@
+[
+  {
+    "trace_id": "OPS_L2_1",
+    "expected_pattern": [
+      "classify_intent",
+      "retrieve_context",
+      "rank_context",
+      "generate_response",
+      "policy_guard"
+    ],
+    "actual_steps": [
+      "classify_intent",
+      "retrieve_context",
+      "rank_context",
+      "generate_response",
+      "policy_guard"
+    ],
+    "agent_output": "Refunds are allowed within 14 days for eligible purchases."
+  },
+  {
+    "trace_id": "OPS_L2_2",
+    "expected_pattern": [
+      "classify_intent",
+      "retrieve_context",
+      "rank_context",
+      "generate_response",
+      "policy_guard"
+    ],
+    "actual_steps": [
+      "classify_intent",
+      "retrieve_context",
+      "rank_context",
+      "generate_response",
+      "policy_guard"
+    ],
+    "agent_output": "P1 incidents must be acknowledged within 15 minutes."
+  }
+]

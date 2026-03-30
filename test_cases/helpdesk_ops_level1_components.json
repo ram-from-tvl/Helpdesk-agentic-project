@@ -1,0 +1,52 @@
+[
+  {
+    "id": "OPS_L1_1",
+    "module": "apps.helpdesk_ops_assistant.app.components",
+    "component": "fetch_policy_context",
+    "input": {
+      "query": "remote work policy",
+      "top_k": 1
+    },
+    "expected_output": "remote work"
+  },
+  {
+    "id": "OPS_L1_2",
+    "module": "apps.helpdesk_ops_assistant.app.components",
+    "component": "fetch_policy_context",
+    "input": {
+      "query": "refund policy",
+      "top_k": 1
+    },
+    "expected_output": "refunds are allowed"
+  },
+  {
+    "id": "OPS_L1_3",
+    "module": "apps.helpdesk_ops_assistant.app.components",
+    "component": "select_best_policy",
+    "input": {
+      "candidate_docs_json": "[{\"id\":\"r1\",\"content\":\"Refunds are allowed within 14 days for eligible purchases.\"}]",
+      "query": "refunds within 14 days"
+    },
+    "expected_output": "refunds are allowed"
+  },
+  {
+    "id": "OPS_L1_4",
+    "module": "apps.helpdesk_ops_assistant.app.components",
+    "component": "build_policy_prompt",
+    "input": {
+      "user_query": "Can I work remotely?",
+      "policy_context": "Remote work is allowed up to 3 days per week with manager approval."
+    },
+    "expected_output": "Question: Can I work remotely?"
+  },
+  {
+    "id": "OPS_L1_5",
+    "module": "apps.helpdesk_ops_assistant.app.components",
+    "component": "select_best_policy",
+    "input": {
+      "candidate_docs_json": "not-json",
+      "query": "refund"
+    },
+    "expected_output": "Invalid JSON"
+  }
+]

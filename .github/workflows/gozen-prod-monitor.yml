@@ -1,0 +1,42 @@
+name: GoZen Production Monitoring
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  gozen-prod-monitor:
+    runs-on: ubuntu-latest
+    env:
+      LYZR_API_KEY: ${{ secrets.LYZR_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate monitoring fixtures
+        run: python apps/helpdesk_ops_assistant/scripts/generate_gozen_fixtures.py
+
+      - name: Run Production Monitor (L4)
+        run: python scripts/run_prod_monitor.py
+
+      - name: Build Dashboard Snapshot
+        run: python operations/dashboard/build_dashboard.py
+
+      - name: Upload Production Dashboard Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gozen-prod-dashboard
+          path: |
+            artifacts/prod_monitor_report.json
+            artifacts/dashboard.html
