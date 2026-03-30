@@ -29,9 +29,6 @@ jobs:
       - name: L1 Component Checks
         run: python gozen_cli.py --level 1 --test-file test_cases/demo_langgraph_level1_components.json --module demo_projects.langgraph_groq_helpdesk.app.components
 
-      - name: Optional Discovery Showcase
-        run: python gozen_cli.py --init demo_projects/langgraph_groq_helpdesk/app/components.py
-
       - name: L2 Trajectory Checks
         run: python gozen_cli.py --level 2 --test-file test_cases/demo_langgraph_level2_trajectories.json
 

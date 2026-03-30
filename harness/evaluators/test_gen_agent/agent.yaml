@@ -1,0 +1,5 @@
+name: TestGenAgent
+version: 1.0.0
+description: A GitAgent standard agent that auto-generates Level 1 component test cases from discovered source code functions.
+provider: openai
+model: gpt-4o
