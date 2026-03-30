@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       LYZR_API_KEY: ${{ secrets.LYZR_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GOZEN_REQUIRE_GROQ: "1"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,6 +27,9 @@ jobs:
 
       - name: Generate quality fixtures
         run: python apps/helpdesk_ops_assistant/scripts/generate_gozen_fixtures.py
+
+      - name: Run Live App Smoke (Groq Required)
+        run: python scripts/run_live_app_smoke.py
 
       - name: Run PR Quality Gate (L1-L3)
         run: python scripts/run_pr_quality_gate.py
