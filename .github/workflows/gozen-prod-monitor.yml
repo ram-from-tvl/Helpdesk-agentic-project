@@ -1,0 +1,31 @@
+name: GoZen Production Monitoring
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  gozen-prod-monitor:
+    runs-on: ubuntu-latest
+    env:
+      LYZR_API_KEY: ${{ secrets.LYZR_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate demo fixtures
+        run: python demo_projects/langgraph_groq_helpdesk/scripts/generate_gozen_fixtures.py
+
+      - name: Level 4 Monitoring (non-PR gate)
+        run: python gozen_cli.py --level 4 --test-file test_cases/demo_langgraph_level4_monitoring.json

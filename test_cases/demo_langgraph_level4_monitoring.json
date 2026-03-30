@@ -1,0 +1,23 @@
+[
+  {
+    "request_id": "LG_REQ_1",
+    "success": true,
+    "latency_ms": 1100,
+    "total_tokens": 420,
+    "tool_errors": 0
+  },
+  {
+    "request_id": "LG_REQ_2",
+    "success": true,
+    "latency_ms": 6400,
+    "total_tokens": 800,
+    "tool_errors": 0
+  },
+  {
+    "request_id": "LG_REQ_3",
+    "success": false,
+    "latency_ms": 2100,
+    "total_tokens": 650,
+    "tool_errors": 2
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "trace_id": "LG_DEMO_1",
+    "expected_pattern": [
+      "classify_intent",
+      "retrieve_context",
+      "draft_answer",
+      "policy_check"
+    ],
+    "actual_steps": [
+      "classify_intent",
+      "retrieve_context",
+      "draft_answer",
+      "policy_check"
+    ],
+    "agent_output": "Based on policy, here is guidance.\\nContext:\\nRemote work is allowed up to 3 days per week with manager approval.\\n\\nQuestion: What is the refund policy?\\nAnswer with policy-grounded guidance only."
+  },
+  {
+    "trace_id": "LG_DEMO_2",
+    "expected_pattern": [
+      "classify_intent",
+      "retrieve_context",
+      "draft_answer",
+      "policy_check"
+    ],
+    "actual_steps": [
+      "classify_intent",
+      "draft_answer",
+      "policy_check"
+    ],
+    "agent_output": "Policy check failed: response contained unsafe or incorrect policy guidance. Please re-run with validated context."
+  },
+  {
+    "trace_id": "LG_DEMO_3",
+    "expected_pattern": [
+      "classify_intent",
+      "retrieve_context",
+      "draft_answer",
+      "policy_check"
+    ],
+    "actual_steps": [
+      "classify_intent",
+      "retrieve_context",
+      "draft_answer",
+      "policy_check"
+    ],
+    "agent_output": "Policy check failed: response contained unsafe or incorrect policy guidance. Please re-run with validated context."
+  }
+]
