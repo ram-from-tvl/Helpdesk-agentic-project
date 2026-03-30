@@ -1,0 +1,14 @@
+[
+  {
+    "case_id": "OPS_L3_1",
+    "query": "Policy support question",
+    "agent_output": "Refunds are allowed within 14 days for eligible purchases.",
+    "golden_label": "Refunds are allowed within 14 days for eligible purchases."
+  },
+  {
+    "case_id": "OPS_L3_2",
+    "query": "Policy support question",
+    "agent_output": "P1 incidents must be acknowledged within 15 minutes.",
+    "golden_label": "P1 incidents must be acknowledged within 15 minutes."
+  }
+]

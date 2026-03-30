@@ -1,0 +1,5 @@
+name: DiscoveryAgent
+version: 1.0.0
+description: A GitAgent standard agent that scans source code and discovers agentic components — tools, parsers, fetchers, and templates — regardless of framework.
+provider: openai
+model: gpt-4o
