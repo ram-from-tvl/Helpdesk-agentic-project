@@ -1,0 +1,5 @@
+name: OutcomeJudge
+version: 1.0.0
+description: A GitAgent standard evaluator agent for assessing outcome semantic correctness.
+provider: openai
+model: gpt-4o
