@@ -1,0 +1,14 @@
+lyzr-adk
+python-dotenv
+termcolor
+pyyaml
+fastapi
+uvicorn
+pydantic
+pytest
+requests
+opentelemetry-api
+opentelemetry-sdk
+langgraph
+langchain-groq
+groq

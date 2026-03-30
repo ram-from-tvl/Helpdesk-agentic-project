@@ -1,0 +1,5 @@
+name: ExplainerAgent
+version: 1.0.0
+description: A GitAgent standard agent that translates trajectory failures into plain English risk explanations for developers.
+provider: openai
+model: gpt-4o

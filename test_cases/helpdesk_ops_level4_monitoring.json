@@ -1,0 +1,23 @@
+[
+  {
+    "request_id": "OPS_REQ_1",
+    "success": true,
+    "latency_ms": 900,
+    "total_tokens": 390,
+    "tool_errors": 0
+  },
+  {
+    "request_id": "OPS_REQ_2",
+    "success": true,
+    "latency_ms": 6200,
+    "total_tokens": 880,
+    "tool_errors": 0
+  },
+  {
+    "request_id": "OPS_REQ_3",
+    "success": false,
+    "latency_ms": 1800,
+    "total_tokens": 610,
+    "tool_errors": 1
+  }
+]
