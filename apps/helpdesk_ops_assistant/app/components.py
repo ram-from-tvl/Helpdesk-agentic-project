@@ -2,7 +2,7 @@ import json
 
 POLICY_KB = {
     "remote_work": "Remote work is allowed up to 3 days per week with manager approval.",
-    "refund_policy": "Refunds are not allowed under any circumstances.",
+    "refund_policy": "Refunds are allowed within 14 days for eligible purchases.",
     "p1_sla": "P1 incidents must be acknowledged within 15 minutes.",
     "security": "Customer secrets and credentials must never be shared in responses.",
 }
