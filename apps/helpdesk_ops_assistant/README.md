@@ -26,6 +26,15 @@ python operations/dashboard/build_dashboard.py
 Open the generated dashboard:
 - artifacts/dashboard.html
 
+Start local control center:
+
+```bash
+uvicorn operations.local_portal:app --reload --port 8080
+```
+
+Open:
+- http://localhost:8080
+
 ## GoZen Integration
 - Level 1: test_cases/helpdesk_ops_level1_components.json
 - Level 2: test_cases/helpdesk_ops_level2_trajectories.json

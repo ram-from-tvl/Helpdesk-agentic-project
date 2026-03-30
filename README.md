@@ -67,7 +67,12 @@ python scripts/run_prod_monitor.py
 
 # 6. Build local dashboard
 python operations/dashboard/build_dashboard.py
+
+# 7. Start local control center (dashboard + dataset editor UI)
+uvicorn operations.local_portal:app --reload --port 8080
 ```
+
+Open in browser: http://localhost:8080
 
 ---
 
@@ -105,6 +110,11 @@ Each workflow publishes artifacts under `artifacts/` including:
 - `dashboard.html`
 
 Open `artifacts/dashboard.html` locally, or download it from GitHub Actions artifacts.
+
+For local interactive usage (no hosted service required), use the local portal:
+- Dashboard + scorecards on localhost
+- Dataset editor for L1-L4 JSON files
+- One-click run actions for fixtures, PR gate, prod monitor, and dashboard refresh
 
 ## Reference Application
 
