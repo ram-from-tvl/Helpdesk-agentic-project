@@ -1,0 +1,5 @@
+name: TrajectoryJudge
+version: 1.0.0
+description: A GitAgent standard evaluator agent for verifying execution trajectories.
+provider: openai
+model: gpt-4o
