@@ -50,3 +50,4 @@ def build_policy_prompt(user_query: str, policy_context: str) -> str:
         f"Question: {user_query}\\n"
         "Answer concisely and strictly using the policy context."
     )
+# Refunds are allowed within 14 days for eligible purchases.
